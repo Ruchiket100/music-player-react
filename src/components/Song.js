@@ -2,9 +2,10 @@ import React from 'react'
 
 const Song = ()=>{
     return(
-        <div>
-            <h1>Song Name</h1>
-            <p>by Darshan Raval</p>
+        <div className="song-container">
+            <h1>Picture</h1>
+            <h1>Name</h1>
+            <p>Artist</p>
         </div>
     )
 }
