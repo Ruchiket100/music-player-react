@@ -1,22 +1,16 @@
 import React from 'react';
-import './App.css';
+import './styles/app.scss'
 // components
-import Todo from './components/todo';
-import Input from './components/input';
+import Song from './components/Song';
+import Player from './components/Player';
 
 function App() {
-  let inputValue = '';
-  function onSubmit(value) {
-    console.log(value);
-  }
-  return (
-    <div className="App">
-      <h1 style={{ background: 'violet' }}>TodoList</h1>
-      <Input onSubmit={onSubmit} />
-      <Todo />
-      {inputValue}
+  return(
+    <div>
+      <Song/>
+      <Player/>
     </div>
-  );
+  )
 }
 
 export default App;
