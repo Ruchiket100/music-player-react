@@ -29,11 +29,11 @@ function chillHop(){
             id: uuidv4()
         },
         {
-            name: 'Rewind',
-            artist: 'SwuM, afternoon bike ride',
-            cover: 'https://chillhop.com/wp-content/uploads/2022/01/d7c0bd347f56540babd9dd85454b93a89df84a15-1024x1024.jpg',
-            color: ['#C44F4C','#426370'],
-            audio: 'https://mp3.chillhop.com/serve.php/?mp3=30134',
+            name: 'Ending',
+            artist: 'Relyae, sadtoi',
+            cover: 'https://chillhop.com/wp-content/uploads/2022/01/0ac63dcdc4e16e6bb979f6ea2c9d0a394ee9e386-1024x1024.jpg',
+            color: ['#A5D3A3','#71588A'],
+            audio: 'https://mp3.chillhop.com/serve.php/?mp3=28969',
             active: false,
             id: uuidv4()
         },

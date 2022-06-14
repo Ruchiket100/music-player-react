@@ -1,11 +1,10 @@
-import React,{useRef,useState} from 'react';
+import React,{useState} from 'react';
 //  font awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlay, faPause, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({currentSong, isPlaying, setIsPlaying})=>{
-    // refs
-    const audioRef = useRef(null);
+const Player = ({audioRef,currentSong, isPlaying, setIsPlaying})=>{
+    
     // states
     const [songInfo, setSongInfo] = useState({
         duration: 0,
@@ -43,7 +42,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying})=>{
         <div className="player-container">
             <div className="time-control">
                 <p>{formatTime(songInfo.currentTime)}</p>
-                <input type="range" min={0} max={songInfo.duration} value={songInfo.currentTime} onChange={onInputChangeHandler} />
+                <input type="range" min={0} max={songInfo.duration  || 0} value={songInfo.currentTime} onChange={onInputChangeHandler} />
                 <p>{formatTime(songInfo.duration)}</p>
             </div>
             <div className="play-control">

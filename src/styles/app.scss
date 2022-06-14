@@ -10,5 +10,7 @@ h1,h2,h3{
  color: #1f2937 ;
 }
 
+@import 'nav';
 @import 'player';
 @import 'song';
+@import 'library';
