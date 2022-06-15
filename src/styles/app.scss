@@ -10,6 +10,14 @@ h1,h2,h3{
  color: #1f2937 ;
 }
 
+
+.App{
+    transition: margin 0.5s ease;
+}
+.library-active-anim{
+    margin-left: 25vw;
+}
+
 @import 'nav';
 @import 'player';
 @import 'song';

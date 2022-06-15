@@ -70,6 +70,14 @@ const Player = ({audioRef,songs,setSongs, setCurrentSong,currentSong, isPlaying,
         setSongInfo({...songInfo, currentTime: e.target.value})
         
     }
+    const playSongIsPlaying =  () => {
+        const play = audioRef.current.play();
+        if(isPlaying){
+            play.then(()=>{
+                audioRef.current.play()
+            })
+        }
+    }
     // change song when click on < or >
     const changeSongHandler = async (duration) => {
         let currentIndex = songs.findIndex((song)=> song.id === currentSong.id);
@@ -84,15 +92,10 @@ const Player = ({audioRef,songs,setSongs, setCurrentSong,currentSong, isPlaying,
                 return;
             }
             await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+            
         }
         // if isplaying the next or previous song will also in play state
-        if(isPlaying) audioRef.current.play()
-    }
-
-    const onEndedSongHandler = async ()=>{
-        let currentIndex = songs.findIndex((song)=> song.id === currentSong.id);
-        await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-        if(isPlaying) audioRef.current.play()
+        await playSongIsPlaying()
     }
 
     // Styles
@@ -117,7 +120,7 @@ const Player = ({audioRef,songs,setSongs, setCurrentSong,currentSong, isPlaying,
             <FontAwesomeIcon onClick={playSongHandler} className='skip-forward' icon={isPlaying ? faPause : faPlay}  size='2x'/>
             <FontAwesomeIcon onClick={()=> changeSongHandler('forward')} className='play' icon={faAngleRight}  size='2x'/>
             </div>
-            <audio onEnded={onEndedSongHandler} onTimeUpdate={onTimeUpdateHandler} onLoadedMetadata={onTimeUpdateHandler} ref={audioRef} src={currentSong.audio} title={currentSong.name}></audio>
+            <audio onEnded={()=> setIsPlaying(false)} onTimeUpdate={onTimeUpdateHandler} onLoadedMetadata={onTimeUpdateHandler} ref={audioRef} src={currentSong.audio} title={currentSong.name}></audio>
         </div>
     )
 }

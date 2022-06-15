@@ -1,6 +1,6 @@
 .library-container{
     height: 100%;
-    max-width: 20rem;
+    max-width: 25vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
     overflow: scroll;
     overflow-x: hidden;
     transform: translateX(-100%);
-    transition: all 0.5s ease-in;
+    transition: all 0.5s ease;
     opacity: 0;
     
     h2{
@@ -80,4 +80,9 @@
 .active-library{
     transform: translateX(0%);
     opacity: 1;
+}
+@media screen and (max-width: 768px){
+    .library-container{
+        max-width:100%;
+    }
 }

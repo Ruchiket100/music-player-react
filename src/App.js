@@ -17,7 +17,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLibrary, setIsLibrary] = useState(false);
   return(
-    <div >
+    <div className={`App ${isLibrary ? 'library-active-anim' : ''}`}>
       <Nav setIsLibrary={setIsLibrary} isLibrary={isLibrary}/>
       <Song 
       currentSong={currentSong}
