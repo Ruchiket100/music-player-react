@@ -15,14 +15,7 @@ const LibrarySong = ({setSongs,songs,song, setCurrentSong, id, isPlaying, audioR
         });
         setSongs(newSongs);
         // play song if isplaying
-        if(isPlaying){
-            const playPromise = audioRef.current.play();
-            if(playPromise !== undefined){
-                playPromise.then(audio=> audioRef.current.play())
-            }
-        }
-        
-        
+        if(isPlaying)audioRef.current.play()
     }
     return(
         <div className={`library-song ${ song.active ? 'active' : ''}`}onClick={onSongClickHandler}>
